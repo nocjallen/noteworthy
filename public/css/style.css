@@ -1,0 +1,15 @@
+svg {
+    position: absolute;
+}
+
+.svg-sm {
+    height: 25px;
+}
+
+.svg-md {
+    height: 50px;
+}
+
+.svg-lg {
+    height: 75px;
+}
