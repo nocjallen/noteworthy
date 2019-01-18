@@ -1,5 +1,17 @@
-svg {
+.cleff {
+    margin-top: 10px;
     position: absolute;
+}
+
+.staff {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+}
+
+svg {
+    width: 100px;
+    height: 100px;
 }
 
 .svg-sm {
