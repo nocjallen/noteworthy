@@ -1,27 +1,80 @@
+body {
+    background: #e9e9e9;
+    font-family: 'Assistant', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
 .cleff {
-    margin-top: 10px;
     position: absolute;
-}
-
-.staff {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100px;
-}
-
-svg {
-    width: 100px;
-    height: 100px;
-}
-
-.svg-sm {
-    height: 25px;
-}
-
-.svg-md {
+    margin-top: 0px;
+    margin-left: 5px;
     height: 50px;
 }
 
-.svg-lg {
-    height: 75px;
+.dev {
+    position: absolute;
+    height: 61px;
+    margin-left: 240px;
+}
+
+.fa-col {
+
+}
+
+.note {
+    position: absolute;
+    height: 58px;
+    margin-left: 100px;
+}
+
+.note.note-a {
+    margin-top: 1px;
+}
+
+.note.note-b {
+    margin-top: -6px;
+}
+
+.note.note-c {
+    margin-top: -13px;
+}
+
+.note.note-d {
+    margin-top: -20px;
+}
+
+.note.note-e {
+    margin-top: -28px;
+}
+
+.note.note-f {
+    margin-top: -35px;
+}
+
+.note.note-g {
+    margin-top: -42px;
+}
+
+.staff {
+    margin: 60px 0px 10px 0;
+    width: inherit;
+}
+
+.staff-svg {
+    width: 220px;
+    height: 61px;
+}
+
+.container {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1.5px 0 0 rgba(0,0,0,0.1);
+    margin: 0 auto;
+    padding: 5px;
+    width: 220px;
+}
+
+@ media (min-width: 769px) {
+
 }

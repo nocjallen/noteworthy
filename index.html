@@ -1,20 +1,39 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="public/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <meta name="viewport" content="width=device-width">
+        <script type="text/javascript" src="public/js/script.js"></script>
     </head>
     <body>
-        <div class="staff">
-            <div class="cleff">
-                <img class="svg-sm" src="public/img/cleff_bass.svg" alt="Bass Cleff">
-            </div>
-            <svg viewBox="0 0 100 100" >
-                <line x1="0" y1="10" x2="100" y2="10" stroke="black" shape-rendering="crispEdges"/>
-                <line x1="0" y1="17" x2="100" y2="17" stroke="black" shape-rendering="crispEdges"/>
-                <line x1="0" y1="24" x2="100" y2="24" stroke="black" shape-rendering="crispEdges"/>
-                <line x1="0" y1="31" x2="100" y2="31" stroke="black" shape-rendering="crispEdges"/>
-                <line x1="0" y1="38" x2="100" y2="38" stroke="black" shape-rendering="crispEdges"/>
-            </svg>
+        <div class="navigation">
+
         </div>
+            <div class="container">
+                <div class="heading">
+                    Can you guess which note this is?
+                </div>
+                <div class="staff">
+                    <div>
+                        <img class="cleff" src="public/img/cleff_bass.svg" alt="Bass Cleff">
+                    </div>
+                    <div>
+                        <img id="note" class="note" src="public/img/note_quarter.svg" alt="Quarter Note">
+                    </div>
+                    <div class="dev">
+                        <i id="move-note-up" class="fas fa-col fa-lg fa-arrow-alt-circle-up"></i>
+                        <i id="move-note-down" class="fas fa-col fa-lg fa-arrow-alt-circle-down"></i>
+                    </div>
+                    <svg class="staff-svg">
+                        <line x1="0" y1="1" x2="220" y2="1" stroke="black" stroke-width="2" shape-rendering="crispEdges"/>
+                        <line x1="0" y1="15" x2="220" y2="15" stroke="black" stroke-width="2" hape-rendering="crispEdges"/>
+                        <line x1="0" y1="30" x2="220" y2="30" stroke="black" stroke-width="2" hape-rendering="crispEdges"/>
+                        <line x1="0" y1="45" x2="220" y2="45" stroke="black" stroke-width="2" hape-rendering="crispEdges"/>
+                        <line x1="0" y1="60" x2="220" y2="60" stroke="black" stroke-width="2" hape-rendering="crispEdges"/>
+                    </svg>
+
+                </div>
+            </div>
     </body>
 </html>
