@@ -5,6 +5,23 @@ body {
     padding: 0;
 }
 
+.answers {
+    height: 25;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.answer-box {
+    border: 1px solid black;
+    height: 23px;
+    text-align: center;
+    width: 23px;
+}
+
+.btn-guess {
+
+}
+
 .cleff {
     position: absolute;
     margin-top: 0px;
@@ -29,7 +46,7 @@ body {
 }
 
 .note.note-a {
-    margin-top: 1px;
+    margin-top: 2px;
 }
 
 .note.note-b {
@@ -54,6 +71,13 @@ body {
 
 .note.note-g {
     margin-top: -42px;
+}
+
+.guess-buttons {
+    display: flex;
+
+    justify-content: space-between;
+    margin-bottom: 15px;
 }
 
 .staff {
