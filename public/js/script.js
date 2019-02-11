@@ -33,18 +33,20 @@ window.onload = function() {
 
     for (var i = 0; i < btnGuess.length; i++) {
         btnGuess[i].addEventListener('click', function() {
-            var div = document.createElement("div");
-            div.innerHTML = (this.textContent);
-            div.className = "answer-box";
-            div.style.marginLeft = answerMargin + "px";
-            if (this.textContent == notes[currentNote]) {
-                div.style.backgroundColor = "green";
-            } else {
-                div.style.backgroundColor = "red";
-            };
-            answersDiv.appendChild(div);
-            answerMargin += 40;
-            currentNote += 1;
+            if (currentNote < notes.length) {
+                var div = document.createElement("div");
+                div.innerHTML = (this.textContent);
+                div.className = "answer-box";
+                div.style.marginLeft = answerMargin + "px";
+                if (this.textContent == notes[currentNote]) {
+                    div.style.backgroundColor = "green";
+                } else {
+                    div.style.backgroundColor = "red";
+                };
+                answersDiv.appendChild(div);
+                answerMargin += 40;
+                currentNote += 1;
+            }
         });
     }
 
