@@ -1,32 +1,52 @@
 window.onload = function() {
-    var answers = document.getElementById("answers");
+    var answerMargin = 80;
+    var answersDiv = document.getElementById("answers");
     var btnGuess = document.querySelectorAll(".btn-guess");
     var btnMoveNoteUp = document.getElementById("move-note-up");
     var btnMoveNoteDown = document.getElementById("move-note-down");
-    var div = document.createElement("div");
+    var cleff = "bass";
+    var currentNote = 0;
+    var notesDiv = document.getElementById("notes");
 
-    var notePositions = ["note-a", "note-b", "note-c", "note-d", "note-e", "note-f", "note-g"];
+    var notePositions = ["pos-1", "pos-2", "pos-3", "pos-4", "pos-5", "pos-6", "pos-7"];
+    var notes = [];
     var notesBass = ["A", "B", "C", "D", "E", "F", "G"];
-    var randomNote = Math.floor(Math.random() * (notePositions.length -1));
 
-    document.getElementById("note").classList.toggle(notePositions[randomNote]);
+    createNotes(4);
+
+    function createNotes(numNotes) {
+        var margin = 80;
+        for (var i = 0; i < numNotes; i++) {
+            var div = document.createElement("div");
+            var randomNote = Math.floor(Math.random() * (notePositions.length -1));
+            if (cleff == "bass") {
+                notes.push(notesBass[randomNote]);
+            }
+            div.innerHTML += '<img class="note ' + notePositions[randomNote] + ' " src="public/img/note_quarter.svg" alt="Quarter Note"></img>';
+            div.style.marginLeft = margin + "px";
+            notesDiv.appendChild(div);
+            margin += 40;
+        }
+    }
+    
+    console.log(notes);
 
     for (var i = 0; i < btnGuess.length; i++) {
         btnGuess[i].addEventListener('click', function() {
+            var div = document.createElement("div");
             div.innerHTML = (this.textContent);
             div.className = "answer-box";
-            div.style.marginLeft = "95px";
-            if (this.textContent == notesBass[randomNote]) {
+            div.style.marginLeft = answerMargin + "px";
+            if (this.textContent == notes[currentNote]) {
                 div.style.backgroundColor = "green";
             } else {
                 div.style.backgroundColor = "red";
             };
-            answers.appendChild(div);
+            answersDiv.appendChild(div);
+            answerMargin += 40;
+            currentNote += 1;
         });
     }
-
-    
-
 
 
     

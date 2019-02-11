@@ -5,6 +5,8 @@ body {
     padding: 0;
 }
 
+
+
 .answers {
     height: 25;
     margin-bottom: 15px;
@@ -14,6 +16,7 @@ body {
 .answer-box {
     border: 1px solid black;
     height: 23px;
+    position: absolute;
     text-align: center;
     width: 23px;
 }
@@ -32,7 +35,11 @@ body {
 .dev {
     position: absolute;
     height: 61px;
-    margin-left: 240px;
+    margin-left: 280px;
+}
+
+.dev-icon {
+    height: 50%
 }
 
 .fa-col {
@@ -40,36 +47,37 @@ body {
 }
 
 .note {
-    position: absolute;
     height: 58px;
-    margin-left: 100px;
+    margin-left: 4.01px;
+    margin-right: 4.01px;
+    position: absolute;
 }
 
-.note.note-a {
+.note.pos-1 {
     margin-top: 2px;
 }
 
-.note.note-b {
+.note.pos-2 {
     margin-top: -6px;
 }
 
-.note.note-c {
+.note.pos-3 {
     margin-top: -13px;
 }
 
-.note.note-d {
+.note.pos-4 {
     margin-top: -20px;
 }
 
-.note.note-e {
+.note.pos-5 {
     margin-top: -28px;
 }
 
-.note.note-f {
+.note.pos-6 {
     margin-top: -35px;
 }
 
-.note.note-g {
+.note.pos-7 {
     margin-top: -42px;
 }
 
@@ -86,17 +94,46 @@ body {
 }
 
 .staff-svg {
-    width: 220px;
     height: 61px;
 }
 
 .container {
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 1.5px 0 0 rgba(0,0,0,0.1);
+    height: 100%;
+    min-height: 275px;
     margin: 0 auto;
-    padding: 5px;
-    width: 220px;
+    width: 275px;
+}
+
+.page-1 {
+    background: #fff;
+    border-radius: 0 5px 5px 0;
+    box-shadow: 1.5px 0 0 0 rgba(0,0,0,0.1);
+    height: 100%;
+    width: 275px;
+}
+
+.page-2 {
+    background: #fff;
+    border-radius: 0 5px 5px 0;
+    box-shadow: 1.5px 0 0 0 rgba(0,0,0,0.1);
+    height: 100%;
+    width: 270px;
+}
+
+.page-3 {
+    background: #fff;
+    border-radius: 0 5px 5px 0;
+    box-shadow: 1.5px 0 0 0 rgba(0,0,0,0.1);
+    height: 100%;
+    width: 265px;
+}
+
+.page-content {
+    background: #fff;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 250px;
 }
 
 @ media (min-width: 769px) {
