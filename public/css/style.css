@@ -5,8 +5,6 @@ body {
     padding: 0;
 }
 
-
-
 .answers {
     height: 25;
     margin-bottom: 15px;
@@ -22,7 +20,7 @@ body {
 }
 
 .btn-guess {
-
+    width: 25px;
 }
 
 .cleff {
@@ -39,11 +37,11 @@ body {
 }
 
 .dev-icon {
-    height: 50%
+    height: 50%;
 }
 
 .fa-col {
-
+    margin-top: 8px;
 }
 
 .note {
@@ -83,9 +81,7 @@ body {
 
 .guess-buttons {
     display: flex;
-
     justify-content: space-between;
-    margin-bottom: 15px;
 }
 
 .staff {
@@ -101,38 +97,12 @@ body {
     height: 100%;
     min-height: 275px;
     margin: 0 auto;
-    width: 275px;
-}
-
-.page-1 {
-    background: #fff;
-    border-radius: 0 5px 5px 0;
-    box-shadow: 1.5px 0 0 0 rgba(0,0,0,0.1);
-    height: 100%;
-    width: 275px;
-}
-
-.page-2 {
-    background: #fff;
-    border-radius: 0 5px 5px 0;
-    box-shadow: 1.5px 0 0 0 rgba(0,0,0,0.1);
-    height: 100%;
-    width: 270px;
-}
-
-.page-3 {
-    background: #fff;
-    border-radius: 0 5px 5px 0;
-    box-shadow: 1.5px 0 0 0 rgba(0,0,0,0.1);
-    height: 100%;
-    width: 265px;
+    width: 260px;
 }
 
 .page-content {
     background: #fff;
-    padding-top: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 5px;
     width: 250px;
 }
 
