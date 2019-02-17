@@ -5,10 +5,11 @@ body {
 
 .answers {
     height: 30px;
+    width: 250px;
 }
 
 .bar {
-    width: 200px;
+    width: 250px;
 }
 
 .box {
@@ -35,10 +36,17 @@ body {
     margin-right: 5px;
 }
 
+.cleff {
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 5px;
+    height: 50px;
+}
+
 .container {
     height: 100%;
     margin: 0 auto;
-    min-width: 242px;
+    min-width: 292px;
     width: 100%
 }
 
@@ -66,6 +74,7 @@ body {
 
 .staff-svg {
     height: 61px;
+    width: 251px;
 }
 
 .question {
@@ -81,7 +90,7 @@ body {
     flex-wrap: wrap;
 }
 
-@media only screen and (min-width: 490px) {
+@media only screen and (min-width: 584px) {
     .container {
         width: 90%
     }
