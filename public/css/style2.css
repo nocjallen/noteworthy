@@ -5,11 +5,11 @@ body {
 
 .answers {
     height: 30px;
-    width: 250px;
+    width: 200px;
 }
 
 .bar {
-    width: 250px;
+    width: 200px;
 }
 
 .box {
@@ -44,9 +44,8 @@ body {
 }
 
 .container {
-    height: 100%;
     margin: 0 auto;
-    min-width: 292px;
+    min-width: 322px;
     width: 100%
 }
 
@@ -61,7 +60,7 @@ body {
 }
 
 .measure {
-    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .navigation {
@@ -70,11 +69,17 @@ body {
 
 .staff {
     margin: 0 auto 0 auto;
+    justify-content: center;
+}
+
+.staff-cleff-svg {
+    height: 61px;
+    width: 80px;
 }
 
 .staff-svg {
     height: 61px;
-    width: 251px;
+    width: 200px;
 }
 
 .question {
@@ -90,16 +95,12 @@ body {
     flex-wrap: wrap;
 }
 
-@media only screen and (min-width: 584px) {
+@media only screen and (min-width: 580px) {
     .container {
         width: 90%
     }
 
-    .measure {
-        flex-direction: row;
-    }
-
     .staff {
-        justify-content: center;
+        
     }
 }
