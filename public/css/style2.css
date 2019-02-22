@@ -4,12 +4,21 @@ body {
 }
 
 .answers {
-    height: 30px;
+    height: 25px;
     width: 200px;
+}
+
+.answer-box {
+    border: 1px solid black;
+    height: 23px;
+    position: absolute;
+    text-align: center;
+    width: 23px;
 }
 
 .bar {
     width: 200px;
+    margin: 42px 0 42px 0;
 }
 
 .box {
@@ -51,12 +60,17 @@ body {
 
 .dev {
     flex-direction: column;
-    padding: 30px 3px 3px 3px;
+    padding: 72px 3px 3px 3px;
     width: 35px;
 }
 
 .dev-icon {
     margin: 2px auto 3px auto;
+}
+
+.dev-note {
+    margin-left: 55px !important;
+    margin-right: 0px !important;
 }
 
 .measure {
@@ -65,6 +79,45 @@ body {
 
 .navigation {
     height: 30px;
+}
+
+.note {
+    height: 58px;
+    margin-left: 4.01px;
+    margin-right: 4.01px;
+    position: absolute;
+}
+
+.note.pos-1 {
+    margin-top: 2px;
+}
+
+.note.pos-2 {
+    margin-top: -6px;
+}
+
+.note.pos-3 {
+    margin-top: -13px;
+}
+
+.note.pos-4 {
+    margin-top: -20px;
+}
+
+.note.pos-5 {
+    margin-top: -28px;
+}
+
+.note.pos-6 {
+    margin-top: -35px;
+}
+
+.note.pos-7 {
+    margin-top: -42px;
+}
+
+.signature {
+    margin-top: 42px;
 }
 
 .staff {
@@ -97,10 +150,6 @@ body {
 
 @media only screen and (min-width: 580px) {
     .container {
-        width: 90%
-    }
-
-    .staff {
-        
+        width: 90%;
     }
 }

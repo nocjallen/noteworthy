@@ -1,8 +1,8 @@
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="public/css/style2.css">
         <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="public/css/style2.css">
         <meta name="viewport" content="width=device-width">
     </head>
     <body>
@@ -17,8 +17,9 @@
                 <div class="box-col">
                     <div class="navigation wireframe">Navigation</div>
                     <div class="box wireframe">
-                        <div>
+                        <div class="signature">
                             <img class="cleff" src="public/img/cleff_bass.svg" alt="Bass Cleff">
+                            <img id="dev-note" class="dev-note note" src="public/img/note_quarter.svg" alt="Quarter Note">
                             <svg class="staff-cleff-svg">
                                 <line x1="1" y1="0" x2="1" y2="60" stroke="black" stroke-width="2" shape-rendering="crispEdges"/>
                                 <line x1="0" y1="1" x2="80" y2="1" stroke="black" stroke-width="2" shape-rendering="crispEdges"/>
@@ -29,8 +30,9 @@
                             </svg>
                         </div>
                         <div class="box measure">
-                            <div class="bar wireframe">
-                                <div>
+                            <div class="wireframe">
+                                <div class="bar bar-margin">
+                                    <div id="bar-one"></div>
                                     <svg class="staff-svg">
                                         <line x1="199" y1="0" x2="199" y2="60" stroke="black" stroke-width="1" shape-rendering="crispEdges"/>
                                         <line x1="0" y1="1" x2="200" y2="1" stroke="black" stroke-width="2" shape-rendering="crispEdges"/>
@@ -40,10 +42,11 @@
                                         <line x1="0" y1="60" x2="200" y2="60" stroke="black" stroke-width="2" shape-rendering="crispEdges"/>
                                     </svg>
                                 </div>
-                                <div class="answers wireframe">Answers</div>
+                                <div id="answers-one" class="box answers wireframe"></div>
                             </div>
-                            <div class="bar wireframe">
-                                <div>
+                            <div class="wireframe">
+                                <div class="bar bar-margin">
+                                    <div id="bar-two"></div>
                                     <svg class="staff-svg">
                                         <line x1="0" y1="0" x2="0" y2="60" stroke="black" stroke-width="1" shape-rendering="crispEdges"/>
                                         <line x1="199" y1="0" x2="199" y2="60" stroke="black" stroke-width="2" shape-rendering="crispEdges"/>
@@ -54,7 +57,7 @@
                                         <line x1="0" y1="60" x2="200" y2="60" stroke="black" stroke-width="2" shape-rendering="crispEdges"/>
                                     </svg>
                                 </div>
-                                <div class="answers wireframe">Answers</div>
+                                <div id="answers-two" class="answers wireframe">Answers</div>
                             </div>
                         </div>
                     </div>
@@ -71,5 +74,6 @@
                 </div>
             </div>
         </div>
+        <script type="text/javascript" src="public/js/script2.js"></script>
     </body>
 </html>
