@@ -72,26 +72,25 @@ for (var i = 0; i < btnGuess.length; i++) {
 }
 
 btnMoveNoteUp.addEventListener("click", function() {
-    moveNoteUp();
+    moveNote("Up");
 });
 
 btnMoveNoteDown.addEventListener("click", function() {
-    moveNoteDown();
+    moveNote("Down");
 });
 
 
-function moveNoteUp() {
-    if (devNotePos != 6) {
-        devNote.classList.toggle(notesBass[devNotePos][0]);
-        devNotePos ++;
-        devNote.classList.toggle(notesBass[devNotePos][0]);
+function moveNote(direction) {
+    devNote.classList.toggle(notesBass[devNotePos][0]);
+    if (direction == "Up") {
+        if (devNotePos != 6) {
+            devNotePos ++;
+        }
     }
-}
-
-function moveNoteDown() {
-    if (devNotePos != 0) {
-        devNote.classList.toggle(notesBass[devNotePos][0]);
-        devNotePos --;
-        devNote.classList.toggle(notesBass[devNotePos][0]);
+    if (direction =="Down") {
+        if (devNotePos != 0) {
+            devNotePos --;
+        }
     }
+    devNote.classList.toggle(notesBass[devNotePos][0]);
 }
