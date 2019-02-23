@@ -1,5 +1,6 @@
 var answerMargin = 20;
-var answersOneDiv = document.getElementById("answers-one");
+var answered = 0;
+var answersDivs = document.querySelectorAll(".answers");
 var btnGuess = document.querySelectorAll(".btn-guess");
 var btnMoveNoteUp = document.getElementById("move-note-up");
 var btnMoveNoteDown = document.getElementById("move-note-down");
@@ -9,15 +10,15 @@ var devNote = document.getElementById("dev-note");
 var devNotePos = 3;
 var notes = [];
 const notesBass = [['pos-1', 'A'],['pos-2', 'B'],['pos-3', 'C'],['pos-4', 'D'],['pos-5', 'E'],['pos-6', 'F'],['pos-7', 'G']];
-var barOneDiv = document.getElementById("bar-one");
-var barTwoDiv = document.getElementById("bar-two");
-var notesDiv = document.getElementById("notes");
+var noteDivs = document.querySelectorAll(".notes");
 
 devNote.classList.toggle(notesBass[devNotePos][0]);
 
-createNotes(4);
+for (var i = 0; i < noteDivs.length; i++) {
+    createNotes(4, i);
+}
 
-function createNotes(numNotes) {
+function createNotes(numNotes, noteDiv) {
     var margin = 20;
     var noteChoices = [];
     for (var i = 0; i < notesBass.length; i++) {
@@ -31,13 +32,11 @@ function createNotes(numNotes) {
         }
         div.innerHTML += '<img class="note ' + noteChoices[randomNote][0] + ' " src="public/img/note_quarter.svg" alt="Quarter Note"></img>';
         div.style.marginLeft = margin + "px";
-        barOneDiv.appendChild(div);
+        noteDivs[noteDiv].appendChild(div);
         margin += 40;
         noteChoices.splice(randomNote, 1);
     }
 }
-
-console.log(notes);
 
 for (var i = 0; i < btnGuess.length; i++) {
     btnGuess[i].addEventListener('click', function() {
@@ -45,15 +44,29 @@ for (var i = 0; i < btnGuess.length; i++) {
             var div = document.createElement("div");
             div.innerHTML = (this.textContent);
             div.className = "answer-box";
-            div.style.marginLeft = answerMargin + "px";
+            
             if (this.textContent == notes[currentNote]) {
                 div.style.backgroundColor = "green";
             } else {
                 div.style.backgroundColor = "red";
             };
-            answersOneDiv.appendChild(div);
+
+            if (answerMargin == 180){
+                answerMargin = 20;
+            };
+
+            div.style.marginLeft = answerMargin + "px";
+
+            if (answered <= 3) {;
+                answersDivs[0].appendChild(div);
+            }
+            else {
+                answersDivs[1].appendChild(div);
+            };
+
+            answered ++;
             answerMargin += 40;
-            currentNote += 1;
+            currentNote ++;
         }
     });
 }
