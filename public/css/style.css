@@ -1,14 +1,11 @@
 body {
-    background: #e9e9e9;
     font-family: 'Assistant', sans-serif;
     margin: 0;
-    padding: 0;
 }
 
 .answers {
-    height: 25;
-    margin-bottom: 15px;
-    margin-top: 15px;
+    height: 25px;
+    width: 200px;
 }
 
 .answer-box {
@@ -19,8 +16,33 @@ body {
     width: 23px;
 }
 
+.bar {
+    width: 200px;
+    margin: 42px 0 42px 0;
+}
+
+.box {
+    display: flex;
+}
+
+.box-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons {
+    padding: 5px 15px;
+    justify-content: center;
+}
+
 .btn-guess {
+    border: 0.1em solid #000000;
+    border-radius: 0.42em;
+    background-color: #FFFFFF;
+    height: 25px;
     width: 25px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .cleff {
@@ -30,18 +52,33 @@ body {
     height: 50px;
 }
 
+.container {
+    margin: 0 auto;
+    min-width: 322px;
+    width: 100%
+}
+
 .dev {
-    position: absolute;
-    height: 61px;
-    margin-left: 280px;
+    flex-direction: column;
+    padding: 72px 3px 3px 3px;
+    width: 35px;
 }
 
 .dev-icon {
-    height: 50%;
+    margin: 2px auto 3px auto;
 }
 
-.fa-col {
-    margin-top: 8px;
+.dev-note {
+    margin-left: 55px !important;
+    margin-right: 0px !important;
+}
+
+.measure {
+    flex-wrap: wrap;
+}
+
+.navigation {
+    height: 30px;
 }
 
 .note {
@@ -79,33 +116,40 @@ body {
     margin-top: -42px;
 }
 
-.guess-buttons {
-    display: flex;
-    justify-content: space-between;
+.signature {
+    margin-top: 42px;
 }
 
 .staff {
-    margin: 60px 0px 10px 0;
-    width: inherit;
+    margin: 0 auto 0 auto;
+    justify-content: center;
+}
+
+.staff-cleff-svg {
+    height: 61px;
+    width: 80px;
 }
 
 .staff-svg {
     height: 61px;
+    width: 200px;
 }
 
-.container {
-    height: 100%;
-    min-height: 275px;
-    margin: 0 auto;
-    width: 260px;
+.question {
+    text-align: center;
+    padding: 5px 15px;
 }
 
-.page-content {
-    background: #fff;
-    padding: 5px;
-    width: 250px;
+.wireframe {
+    outline: 1px solid black;
 }
 
-@ media (min-width: 769px) {
+.wrap {
+    flex-wrap: wrap;
+}
 
+@media only screen and (min-width: 580px) {
+    .container {
+        width: 90%;
+    }
 }
