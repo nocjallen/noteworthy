@@ -73,13 +73,13 @@ for (var i = 0; i < btnGuess.length; i++) {
     });
 }
 
-btnMoveNoteUp.addEventListener("click", function() {
-    moveNote("Up");
-});
+//btnMoveNoteUp.addEventListener("click", function() {
+//  moveNote("Up");
+//});
 
-btnMoveNoteDown.addEventListener("click", function() {
-    moveNote("Down");
-});
+//btnMoveNoteDown.addEventListener("click", function() {
+//    moveNote("Down");
+//});
 
 
 function moveNote(direction) {
