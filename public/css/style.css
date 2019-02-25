@@ -37,13 +37,14 @@ body {
 }
 
 .btn-guess {
-    border: 0.1em solid #000000;
-    border-radius: 0.42em;
+    border: 1px solid #000000;
+    border-radius: 4px;
     background-color: #FFFFFF;
     height: 25px;
-    width: 25px;
-    margin-left: 5px;
-    margin-right: 5px;
+    width: 40px;
+    margin-left: 8px;
+    margin-right: 8px;
+    outline: none;
 }
 
 .cleff {
