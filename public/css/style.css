@@ -32,19 +32,17 @@ body {
 }
 
 .buttons {
-    padding: 5px 15px;
     justify-content: center;
 }
 
 .btn-guess {
+    background-color: #FFFFFF;
     border: 1px solid #000000;
     border-radius: 4px;
-    background-color: #FFFFFF;
     height: 25px;
-    width: 40px;
-    margin-left: 8px;
-    margin-right: 8px;
+    margin: 8px;
     outline: none;
+    width: 40px;
 }
 
 .cleff {
@@ -162,6 +160,10 @@ body {
 }
 
 @media only screen and (max-width: 520px) {
+    .buttons {
+        margin: 0 auto 0px auto;
+        width: 250px;
+    }
     .measure {
         width: 200px;
     }
