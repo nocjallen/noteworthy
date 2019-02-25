@@ -12,7 +12,7 @@ var notes = [];
 const notesBass = [['pos-1', 'A'],['pos-2', 'B'],['pos-3', 'C'],['pos-4', 'D'],['pos-5', 'E'],['pos-6', 'F'],['pos-7', 'G']];
 var noteDivs = document.querySelectorAll(".notes");
 
-devNote.classList.toggle(notesBass[devNotePos][0]);
+//devNote.classList.toggle(notesBass[devNotePos][0]);
 
 for (var i = 0; i < noteDivs.length; i++) {
     createNotes(4, i);
@@ -21,15 +21,17 @@ for (var i = 0; i < noteDivs.length; i++) {
 function createNotes(numNotes, noteDiv) {
     var margin = 20;
     var noteChoices = [];
-    for (var i = 0; i < notesBass.length; i++) {
-        noteChoices.push(notesBass[i]);
+
+    if (cleff == "bass") {
+        for (var i = 0; i < notesBass.length; i++) {
+            noteChoices.push(notesBass[i]);
+        }
     }
+
     for (var i = 0; i < numNotes; i++) {
         var div = document.createElement("div");
         var randomNote = Math.floor(Math.random() * (noteChoices.length -1));
-        if (cleff == "bass") {
-            notes.push(noteChoices[randomNote][1]);
-        }
+        notes.push(noteChoices[randomNote][1]);
         div.innerHTML += '<img class="note ' + noteChoices[randomNote][0] + ' " src="public/img/note_quarter.svg" alt="Quarter Note"></img>';
         div.style.marginLeft = margin + "px";
         noteDivs[noteDiv].appendChild(div);
@@ -82,15 +84,18 @@ btnMoveNoteDown.addEventListener("click", function() {
 
 function moveNote(direction) {
     devNote.classList.toggle(notesBass[devNotePos][0]);
+
     if (direction == "Up") {
         if (devNotePos != 6) {
             devNotePos ++;
         }
     }
+
     if (direction =="Down") {
         if (devNotePos != 0) {
             devNotePos --;
         }
     }
+
     devNote.classList.toggle(notesBass[devNotePos][0]);
 }

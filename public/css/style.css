@@ -5,6 +5,7 @@ body {
 
 .answers {
     height: 25px;
+    padding: 4px 0 4px 0;
     width: 200px;
 }
 
@@ -89,19 +90,23 @@ body {
 }
 
 .note.pos-1 {
-    margin-top: 2px;
+    margin-top: 45px;
+    transform: rotate(180deg);
 }
 
 .note.pos-2 {
-    margin-top: -6px;
+    margin-top: 38px;
+    transform: rotate(180deg);
 }
 
 .note.pos-3 {
-    margin-top: -13px;
+    margin-top: 30px;
+    transform: rotate(180deg);
 }
 
 .note.pos-4 {
-    margin-top: -20px;
+    margin-top: 23px;
+    transform: rotate(180deg);
 }
 
 .note.pos-5 {
