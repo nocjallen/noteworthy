@@ -18,8 +18,8 @@ body {
 }
 
 .bar {
+    flex-wrap: wrap;
     width: 200px;
-    margin: 42px 0 42px 0;
 }
 
 .box {
@@ -76,8 +76,8 @@ body {
 }
 
 .measure {
-    flex-wrap: wrap;
     width: 200px;
+    margin: 42px 0 42px 0;
 }
 
 .navigation {
@@ -159,7 +159,7 @@ body {
     .buttons {
         width: 100%;
     }
-    .measure {
+    .bar {
         width: 100%;
     }
 }
