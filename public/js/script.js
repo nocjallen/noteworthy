@@ -11,7 +11,7 @@ var devNotePos = 3;
 var notes = [];
 const notesBass = [['pos-1', 'A'],['pos-2', 'B'],['pos-3', 'C'],['pos-4', 'D'],['pos-5', 'E'],['pos-6', 'F'],['pos-7', 'G']];
 var noteDivs = document.querySelectorAll(".notes");
-
+var modalDiv = document.getElementById("modal-overlay")
 //devNote.classList.toggle(notesBass[devNotePos][0]);
 
 for (var i = 0; i < noteDivs.length; i++) {
@@ -49,7 +49,8 @@ for (var i = 0; i < btnGuess.length; i++) {
             
             if (this.textContent == notes[currentNote]) {
                 div.style.backgroundColor = "green";
-            } else {
+            }
+            else {
                 div.style.backgroundColor = "red";
             };
 
@@ -59,7 +60,7 @@ for (var i = 0; i < btnGuess.length; i++) {
 
             div.style.marginLeft = answerMargin + "px";
 
-            if (answered <= 3) {;
+            if (answered <= 3) {
                 answersDivs[0].appendChild(div);
             }
             else {
@@ -69,6 +70,9 @@ for (var i = 0; i < btnGuess.length; i++) {
             answered ++;
             answerMargin += 40;
             currentNote ++;
+            if (answered == 8) {
+                modalDiv.classList.toggle("visible");
+            }
         }
     });
 }
