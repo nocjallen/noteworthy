@@ -40,6 +40,7 @@ body {
 .btn-change-cleff {
     border: none;
     height: 30px;
+    outline: none;
 }
 
 .btn-guess {
