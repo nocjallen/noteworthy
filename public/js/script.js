@@ -21,36 +21,39 @@ var signatureDiv = document.getElementById("signature");
 //devNote.classList.toggle(notesBass[devNotePos][0]);
 
 addCleff();
+createNotes();
 
-for (var i = 0; i < noteDivs.length; i++) {
-    createNotes(4, i);
-}
+function createNotes() {
+    answerMargin = 20;
+    answered = 0;
+    currentNote = 0;
+    notes = [];
+    for (var noteDiv = 0; noteDiv < noteDivs.length; noteDiv++) {
+        var margin = 20;
+        var noteChoices = [];
 
-function createNotes(numNotes, noteDiv) {
-    var margin = 20;
-    var noteChoices = [];
-
-    if (cleff == "bass") {
-        for (var i = 0; i < notesBass.length; i++) {
-            noteChoices.push(notesBass[i]);
+        if (cleff == "bass") {
+            for (var i = 0; i < notesBass.length; i++) {
+                noteChoices.push(notesBass[i]);
+            }
         }
-    }
 
-    if (cleff == "treble") {
-        for (var i = 0; i < notesTreble.length; i++) {
-            noteChoices.push(notesTreble[i]);
+        if (cleff == "treble") {
+            for (var i = 0; i < notesTreble.length; i++) {
+                noteChoices.push(notesTreble[i]);
+            }
         }
-    }
 
-    for (var i = 0; i < numNotes; i++) {
-        var div = document.createElement("div");
-        var randomNote = Math.floor(Math.random() * (noteChoices.length -1));
-        notes.push(noteChoices[randomNote][1]);
-        div.innerHTML += '<img class="note ' + noteChoices[randomNote][0] + ' " src="public/img/note_quarter.svg" alt="Quarter Note"></img>';
-        div.style.marginLeft = margin + "px";
-        noteDivs[noteDiv].appendChild(div);
-        margin += 40;
-        noteChoices.splice(randomNote, 1);
+        for (var i = 0; i < 4; i++) {
+            var div = document.createElement("div");
+            var randomNote = Math.floor(Math.random() * (noteChoices.length -1));
+            notes.push(noteChoices[randomNote][1]);
+            div.innerHTML += '<img class="note ' + noteChoices[randomNote][0] + ' " src="public/img/note_quarter.svg" alt="Quarter Note"></img>';
+            div.style.marginLeft = margin + "px";
+            noteDivs[noteDiv].appendChild(div);
+            margin += 40;
+            noteChoices.splice(randomNote, 1);
+        }
     }
 }
 
@@ -103,12 +106,16 @@ btnBassCleff.addEventListener("click", function() {
     cleff = "bass";
     removeCleff();
     addCleff();
+    cleanUp();
+    createNotes();
 })
 
 btnTrebleCleff.addEventListener("click", function() {
     cleff = "treble";
     removeCleff();
     addCleff();
+    cleanUp();
+    createNotes();
 })
 
 btnChangeCleff.addEventListener("click", function() {
@@ -118,11 +125,11 @@ btnChangeCleff.addEventListener("click", function() {
 function addCleff() {
     var div = document.createElement("div");
     if (cleff == "bass") {
-        div.innerHTML += '<img id="cleff" class="cleff" src="public/img/cleff_bass.svg" alt="Bass Cleff"></img>';
+        div.innerHTML += '<img id="cleff" class="bass-cleff" src="public/img/cleff_bass.svg" alt="Bass Cleff"></img>';
     }
 
     if (cleff =="treble") {
-        div.innerHTML += '<img id="cleff" class="cleff" src="public/img/cleff_treble.svg" alt="Treble Cleff"></img>';
+        div.innerHTML += '<img id="cleff" class="treble-cleff" src="public/img/cleff_treble.svg" alt="Treble Cleff"></img>';
     }
     signatureDiv.prepend(div);
 }
@@ -130,6 +137,22 @@ function addCleff() {
 function removeCleff() {
     if (document.getElementById("cleff")) {
         var element = document.getElementById("cleff");
+        element.parentNode.removeChild(element);
+    }
+}
+
+function cleanUp() {
+    var currentAnswers = document.querySelectorAll(".answer-box");
+    for (var i = 0; i < currentAnswers.length; i++) {
+        console.log("Removing: " + currentAnswers[i]);
+        var element = currentAnswers[i];
+        element.parentNode.removeChild(element);
+    }
+
+    var currentNotes = document.querySelectorAll(".note");
+    for (var i = 0; i < currentNotes.length; i++) {
+        console.log("Removing: " + currentNotes[i]);
+        var element = currentNotes[i];
         element.parentNode.removeChild(element);
     }
 }

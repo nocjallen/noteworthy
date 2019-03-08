@@ -52,11 +52,18 @@ body {
     width: 40px;
 }
 
-.cleff {
+.bass-cleff {
     position: absolute;
     margin-top: 0px;
     margin-left: 5px;
     height: 50px;
+}
+
+.treble-cleff {
+    position: absolute;
+    margin-top: -17px;
+    margin-left: 5px;
+    height: 100px;
 }
 
 .container {
