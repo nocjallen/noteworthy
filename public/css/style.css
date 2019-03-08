@@ -39,7 +39,16 @@ body {
 
 .btn-change-cleff {
     border: none;
+    display: block;
     height: 30px;
+    outline: none;
+}
+
+.btn-continue {
+    border: none;
+    display: block;
+    height: 30px;
+    margin: 0 auto 0 auto;
     outline: none;
 }
 
@@ -118,15 +127,24 @@ body {
 }
 
 .modal {
-    margin-left: auto;
-    margin-top: 100px;
-    margin-right: auto;
-    width: 280px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin: 80px auto auto auto;
+    width: 240px;
 }
 
 .modal-content {
-    background-color: #ffffff;
-    width: 100%;
+    display: inline-block;
+    height: 60px;
+    margin: 10px;
+    width:100%;
+}
+
+.modal-footer {
+    display: inline-block;
+    height: 30px;
+    margin: 10px auto 10px auto;
+    width:100%;
 }
 
 .modal-overlay {
@@ -229,9 +247,7 @@ body {
         width: 100%;
     }
 
-    .modal {
-        width: 480px;
-    }
+
 }
 
 @media only screen and (min-width: 580px) {

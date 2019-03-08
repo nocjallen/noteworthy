@@ -3,6 +3,7 @@ var answered = 0;
 var answersDivs = document.querySelectorAll(".answers");
 var btnBassCleff = document.getElementById("a-bass-cleff");
 var btnChangeCleff = document.getElementById("btn-change-cleff");
+var btnContinue = document.getElementById("btn-continue");
 var btnGuess = document.querySelectorAll(".btn-guess");
 var btnMoveNoteUp = document.getElementById("move-note-up");
 var btnMoveNoteDown = document.getElementById("move-note-down");
@@ -120,6 +121,12 @@ btnTrebleCleff.addEventListener("click", function() {
 
 btnChangeCleff.addEventListener("click", function() {
     idChangeCleff.classList.toggle("visible");
+})
+
+btnContinue.addEventListener("click", function() {
+    cleanUp();
+    createNotes();
+    modalDiv.classList.toggle("visible");
 })
 
 function addCleff() {
