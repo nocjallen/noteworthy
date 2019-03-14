@@ -1,5 +1,6 @@
 var answerMargin = 20;
 var answered = 0;
+var correct = 0;
 var answersDivs = document.querySelectorAll(".answers");
 var btnBassCleff = document.getElementById("a-bass-cleff");
 var btnChangeCleff = document.getElementById("btn-change-cleff");
@@ -18,6 +19,7 @@ const notesBass = [['pos-1', 'A'],['pos-2', 'B'],['pos-3', 'C'],['pos-4', 'D'],[
 const notesTreble = [['pos-1', 'F'],['pos-2', 'G'],['pos-3', 'A'],['pos-4', 'B'],['pos-5', 'C'],['pos-6', 'D'],['pos-7', 'E']];
 var noteDivs = document.querySelectorAll(".notes");
 var modalDiv = document.getElementById("modal-overlay");
+var modalContentDiv = document.getElementById("modal-content")
 var signatureDiv = document.getElementById("signature");
 //devNote.classList.toggle(notesBass[devNotePos][0]);
 
@@ -27,6 +29,7 @@ createNotes();
 function createNotes() {
     answerMargin = 20;
     answered = 0;
+    correct = 0;
     currentNote = 0;
     notes = [];
     for (var noteDiv = 0; noteDiv < noteDivs.length; noteDiv++) {
@@ -66,10 +69,11 @@ for (var i = 0; i < btnGuess.length; i++) {
             div.className = "answer-box";
             
             if (this.textContent == notes[currentNote]) {
-                div.style.backgroundColor = "green";
+                div.style.backgroundColor = "a1de93";
+                correct ++;
             }
             else {
-                div.style.backgroundColor = "red";
+                div.style.backgroundColor = "f47c7c";
             }
 
             if (answerMargin == 180){
@@ -89,6 +93,7 @@ for (var i = 0; i < btnGuess.length; i++) {
             answerMargin += 40;
             currentNote ++;
             if (answered == 8) {
+                modalContentDiv.innerHTML = "You answered " + correct + " of " + answered + " notes correctly."
                 modalDiv.classList.toggle("visible");
             }
         }
