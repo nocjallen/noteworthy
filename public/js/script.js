@@ -1,63 +1,72 @@
+// Variable Declarations
 var answerMargin = 20;
 var answered = 0;
-var correct = 0;
 var answersDivs = document.querySelectorAll(".answers");
-var btnBassCleff = document.getElementById("a-bass-cleff");
 var btnChangeCleff = document.getElementById("btn-change-cleff");
+var btnCleffTreble = document.getElementById("a-cleff-treble");
+var btnCleffBass = document.getElementById("a-cleff-bass");
 var btnContinue = document.getElementById("btn-continue");
 var btnGuess = document.querySelectorAll(".btn-guess");
 var btnMoveNoteUp = document.getElementById("move-note-up");
 var btnMoveNoteDown = document.getElementById("move-note-down");
-var btnTrebleCleff = document.getElementById("a-treble-cleff");
 var cleff = "bass";
+var correct = 0;
 var currentNote = 0;
 var devNote = document.getElementById("dev-note");
 var devNotePos = 3;
 var idChangeCleff = document.getElementById("change-cleff");
+var modalContentDiv = document.getElementById("modal-content")
+var modalDiv = document.getElementById("modal-overlay");
+var noteDivs = document.querySelectorAll(".notes");
 var notes = [];
 const notesBass = [['pos-1', 'A'],['pos-2', 'B'],['pos-3', 'C'],['pos-4', 'D'],['pos-5', 'E'],['pos-6', 'F'],['pos-7', 'G']];
 const notesTreble = [['pos-1', 'F'],['pos-2', 'G'],['pos-3', 'A'],['pos-4', 'B'],['pos-5', 'C'],['pos-6', 'D'],['pos-7', 'E']];
-var noteDivs = document.querySelectorAll(".notes");
-var modalDiv = document.getElementById("modal-overlay");
-var modalContentDiv = document.getElementById("modal-content")
 var signatureDiv = document.getElementById("signature");
 //devNote.classList.toggle(notesBass[devNotePos][0]);
 
 addCleff();
 createNotes();
 
-function createNotes() {
-    answerMargin = 20;
-    answered = 0;
-    correct = 0;
-    currentNote = 0;
-    notes = [];
-    for (var noteDiv = 0; noteDiv < noteDivs.length; noteDiv++) {
-        var margin = 20;
-        var noteChoices = [];
+// DOM Elements
+btnChangeCleff.addEventListener("click", function() {
+    idChangeCleff.classList.toggle("visible");
+})
 
-        if (cleff == "bass") {
-            for (var i = 0; i < notesBass.length; i++) {
-                noteChoices.push(notesBass[i]);
-            }
-        }
+btnCleffBass.addEventListener("click", function() {
+    cleff = "bass";
+    removeCleff();
+    addCleff();
+    cleanUp();
+    createNotes();
+})
 
-        if (cleff == "treble") {
-            for (var i = 0; i < notesTreble.length; i++) {
-                noteChoices.push(notesTreble[i]);
-            }
-        }
+btnCleffTreble.addEventListener("click", function() {
+    cleff = "treble";
+    removeCleff();
+    addCleff();
+    cleanUp();
+    createNotes();
+})
 
-        for (var i = 0; i < 4; i++) {
-            var div = document.createElement("div");
-            var randomNote = Math.floor(Math.random() * (noteChoices.length -1));
-            notes.push(noteChoices[randomNote][1]);
-            div.innerHTML += '<img class="note ' + noteChoices[randomNote][0] + ' " src="public/img/note_quarter.svg" alt="Quarter Note"></img>';
-            div.style.marginLeft = margin + "px";
-            noteDivs[noteDiv].appendChild(div);
-            margin += 40;
-            noteChoices.splice(randomNote, 1);
-        }
+btnContinue.addEventListener("click", function() {
+    cleanUp();
+    createNotes();
+    modalDiv.classList.toggle("visible");
+})
+
+//btnMoveNoteUp.addEventListener("click", function() {
+//  moveNote("Up");
+//});
+
+//btnMoveNoteDown.addEventListener("click", function() {
+//    moveNote("Down");
+//});
+
+window.onclick = function(event) {
+    if (!event.target.matches('.btn-change-cleff')) {
+        if (idChangeCleff.classList.contains('visible')) {
+            idChangeCleff.classList.toggle("visible");     
+        }   
     }
 }
 
@@ -100,57 +109,17 @@ for (var i = 0; i < btnGuess.length; i++) {
     })
 }
 
-//btnMoveNoteUp.addEventListener("click", function() {
-//  moveNote("Up");
-//});
-
-//btnMoveNoteDown.addEventListener("click", function() {
-//    moveNote("Down");
-//});
-
-btnBassCleff.addEventListener("click", function() {
-    cleff = "bass";
-    removeCleff();
-    addCleff();
-    cleanUp();
-    createNotes();
-})
-
-btnTrebleCleff.addEventListener("click", function() {
-    cleff = "treble";
-    removeCleff();
-    addCleff();
-    cleanUp();
-    createNotes();
-})
-
-btnChangeCleff.addEventListener("click", function() {
-    idChangeCleff.classList.toggle("visible");
-})
-
-btnContinue.addEventListener("click", function() {
-    cleanUp();
-    createNotes();
-    modalDiv.classList.toggle("visible");
-})
-
+// Functions
 function addCleff() {
     var div = document.createElement("div");
     if (cleff == "bass") {
-        div.innerHTML += '<img id="cleff" class="bass-cleff" src="public/img/cleff_bass.svg" alt="Bass Cleff"></img>';
+        div.innerHTML += '<img id="cleff" class="cleff-bass" src="public/img/cleff_bass.svg" alt="Bass Cleff"></img>';
     }
 
     if (cleff =="treble") {
-        div.innerHTML += '<img id="cleff" class="treble-cleff" src="public/img/cleff_treble.svg" alt="Treble Cleff"></img>';
+        div.innerHTML += '<img id="cleff" class="cleff-treble" src="public/img/cleff_treble.svg" alt="Treble Cleff"></img>';
     }
     signatureDiv.prepend(div);
-}
-
-function removeCleff() {
-    if (document.getElementById("cleff")) {
-        var element = document.getElementById("cleff");
-        element.parentNode.removeChild(element);
-    }
 }
 
 function cleanUp() {
@@ -166,6 +135,41 @@ function cleanUp() {
         console.log("Removing: " + currentNotes[i]);
         var element = currentNotes[i];
         element.parentNode.removeChild(element);
+    }
+}
+
+function createNotes() {
+    answerMargin = 20;
+    answered = 0;
+    correct = 0;
+    currentNote = 0;
+    notes = [];
+    for (var noteDiv = 0; noteDiv < noteDivs.length; noteDiv++) {
+        var margin = 20;
+        var noteChoices = [];
+
+        if (cleff == "bass") {
+            for (var i = 0; i < notesBass.length; i++) {
+                noteChoices.push(notesBass[i]);
+            }
+        }
+
+        if (cleff == "treble") {
+            for (var i = 0; i < notesTreble.length; i++) {
+                noteChoices.push(notesTreble[i]);
+            }
+        }
+
+        for (var i = 0; i < 4; i++) {
+            var div = document.createElement("div");
+            var randomNote = Math.floor(Math.random() * (noteChoices.length -1));
+            notes.push(noteChoices[randomNote][1]);
+            div.innerHTML += '<img class="note ' + noteChoices[randomNote][0] + ' " src="public/img/note_quarter.svg" alt="Quarter Note"></img>';
+            div.style.marginLeft = margin + "px";
+            noteDivs[noteDiv].appendChild(div);
+            margin += 40;
+            noteChoices.splice(randomNote, 1);
+        }
     }
 }
 
@@ -187,10 +191,9 @@ function moveNote(direction) {
     devNote.classList.toggle(notesBass[devNotePos][0]);
 }
 
-window.onclick = function(event) {
-    if (!event.target.matches('.btn-change-cleff')) {
-        if (idChangeCleff.classList.contains('visible')) {
-            idChangeCleff.classList.toggle("visible");     
-        }   
+function removeCleff() {
+    if (document.getElementById("cleff")) {
+        var element = document.getElementById("cleff");
+        element.parentNode.removeChild(element);
     }
 }

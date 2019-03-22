@@ -8,6 +8,7 @@
     <body>
         <div class="container">
             <div class="question">Can you guess which notes these are?</div>
+            <!--Topmost flexbox container. -->
             <div class="box staff">
                 <!--
                 <div class="box dev">
@@ -17,16 +18,18 @@
                 </div>
                 -->
                 <div class="box-col">
+                    <!--Navigation bar.-->
                     <div class="navigation">
                         <div class="dropdown">
                             <button id="btn-change-cleff" class="btn-change-cleff">Change Cleff <i class="fas fa-caret-down"></i></button>
                             <div id="change-cleff" class="dropdown-content">
-                                <a id="a-bass-cleff" href="#">Bass Cleff</a>
-                                <a id="a-treble-cleff" href="#">Treble Cleff</a>
+                                <a id="a-cleff-bass" href="#">Bass Cleff</a>
+                                <a id="a-cleff-treble" href="#">Treble Cleff</a>
                             </div>
                         </div>
                     </div>
                     <div class="box">
+                        <!--Key and time signatures.-->
                         <div id="signature" class="signature">
                             <!--
                             <img class="cleff" src="public/img/cleff_bass.svg" alt="Bass Cleff">
@@ -44,6 +47,7 @@
                             </svg>
                         </div>
                         <div class="box bar">
+                            <!--First bar of notes.-->
                             <div class="">
                                 <div class="measure measure-margin">
                                     <div class="notes"></div>
@@ -58,6 +62,7 @@
                                 </div>
                                 <div id="answers-one" class="box answers"></div>
                             </div>
+                            <!--Second bar of notes.-->
                             <div class="">
                                 <div class="measure measure-margin">
                                     <div class="notes"></div>
@@ -77,6 +82,7 @@
                     </div>
                 </div>
             </div>
+            <!--Buttons to guess notes A through G.-->
             <div class="box buttons wrap">
                     <button class="btn-guess">A</button>
                     <button class="btn-guess">B</button>
@@ -88,6 +94,7 @@
                 </div>
             </div>
         </div>
+        <!--Modal which displays the number of notes correctly guessed.-->
         <div class="modal-overlay" id="modal-overlay">
             <div class="modal">
                 <div id="modal-content" class="modal-content">
