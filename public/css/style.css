@@ -1,3 +1,4 @@
+/* Begin Answer Selectors */
 .answers {
     height: 25px;
     padding: 4px 0 4px 0;
@@ -12,6 +13,7 @@
     text-align: center;
     width: 23px;
 }
+/* End Answer Selectors */
 
 .bar {
     flex-wrap: wrap;
@@ -23,7 +25,7 @@ body {
     margin: 0;
 }
 
-/* Begin Flexbox*/
+/* Begin Flexbox Selectors */
 .box {
     display: flex;
 }
@@ -32,9 +34,13 @@ body {
     display: flex;
     flex-direction: column;
 }
-/* End Flexbox*/
 
-/* Begin Buttons */
+.box-wrap {
+    flex-wrap: wrap;
+}
+/* End Flexbox Selectors */
+
+/* Begin Button Selectors */
 .buttons {
     justify-content: center;
     margin: 0 auto 0px auto;
@@ -70,8 +76,9 @@ body {
     outline: none;
     width: 45px;
 }
-/* End Buttons */
+/* End Button Selectors */
 
+/* Begin Music Cleff Selectors */
 .cleff-bass {
     position: absolute;
     margin-left: 5px;
@@ -85,6 +92,7 @@ body {
     margin-top: -17px;
     height: 100px;
 }
+/* End Music Cleff Selectors */
 
 .container {
     margin: 0 auto;
@@ -92,7 +100,7 @@ body {
     width: 100%
 }
 
-/* Begin Development Elements */
+/* Begin Development Selectors */
 .dev {
     flex-direction: column;
     padding: 72px 3px 3px 3px;
@@ -107,8 +115,9 @@ body {
     margin-left: 55px !important;
     margin-right: 0px !important;
 }
-/* End Development Elements */
+/* End Development Selectors */
 
+/* Begin Dropdown Selectors */
 .dropdown {
     display: inline-block;
     position: relative;
@@ -137,12 +146,14 @@ body {
 .dropdown-content.visible {
     display: block;
 }
+/* End Dropdown Selectors */
 
 .measure {
     margin: 42px 0 42px 0;
     width: 200px;
 }
 
+/* Begin Modal Selectors */
 .modal {
     background-color: #ffffff;
     border-radius: 4px;
@@ -179,12 +190,14 @@ body {
 .modal-overlay.visible {
     display: block;
 }
+/* End Modal Selectors */
 
 .navigation {
     background-color: #E8EBE4;
     height: 30px;
 }
 
+/* Begin Music Note Selectors */
 .note {
     height: 58px;
     margin-left: 4.01px;
@@ -223,11 +236,13 @@ body {
 .note.pos-7 {
     margin-top: -42px;
 }
+/* End Music Note Selectors */
 
 .signature {
     margin-top: 42px;
 }
 
+/* Begin Music Staff Selectors */
 .staff {
     justify-content: center;
     margin: 0 auto 0 auto;
@@ -242,22 +257,15 @@ body {
     height: 61px;
     width: 200px;
 }
+/* End Music Staff Selectors */
 
 .question {
     padding: 5px 15px;
     text-align: center;
 }
 
-.wireframe {
-    outline: 1px solid black;
-}
-
-.wrap {
-    flex-wrap: wrap;
-}
-
+/* Begin Media Queries */
 @media only screen and (min-width: 520px) {
-
     .bar {
         width: 100%;
     }
@@ -265,14 +273,11 @@ body {
     .buttons {
         width: 100%;
     }
-
-
 }
 
 @media only screen and (min-width: 580px) {
-
     .container {
         width: 90%;
     }
-    
 }
+/* End Media Queries */
