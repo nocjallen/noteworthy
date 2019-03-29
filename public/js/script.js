@@ -21,10 +21,10 @@ var noteDivs = document.querySelectorAll(".notes");
 var notes = [];
 const notesBass = [['pos-1', 'A'],['pos-2', 'B'],['pos-3', 'C'],['pos-4', 'D'],['pos-5', 'E'],['pos-6', 'F'],['pos-7', 'G']];
 const notesTreble = [['pos-1', 'F'],['pos-2', 'G'],['pos-3', 'A'],['pos-4', 'B'],['pos-5', 'C'],['pos-6', 'D'],['pos-7', 'E']];
-var signatureDiv = document.getElementById("signature");
+var signatureDivs = document.querySelectorAll(".signature");
 //devNote.classList.toggle(notesBass[devNotePos][0]);
 
-addCleff();
+addCleffs();
 createNotes();
 
 // DOM Elements
@@ -34,16 +34,16 @@ btnChangeCleff.addEventListener("click", function() {
 
 btnCleffBass.addEventListener("click", function() {
     cleff = "bass";
-    removeCleff();
-    addCleff();
+    removeCleffs();
+    addCleffs();
     cleanUp();
     createNotes();
 })
 
 btnCleffTreble.addEventListener("click", function() {
     cleff = "treble";
-    removeCleff();
-    addCleff();
+    removeCleffs();
+    addCleffs();
     cleanUp();
     createNotes();
 })
@@ -109,30 +109,32 @@ for (var i = 0; i < btnGuess.length; i++) {
     })
 }
 
-// Functions
-function addCleff() {
-    var div = document.createElement("div");
-    if (cleff == "bass") {
-        div.innerHTML += '<img id="cleff" class="cleff-bass" src="public/img/cleff_bass.svg" alt="Bass Cleff"></img>';
-    }
+// Functionss
+function addCleffs() {
+    for (var i = 0; i < signatureDivs.length; i++) {
+        var div = document.createElement("div");
+        
+        if (cleff == "bass") {
+            div.innerHTML += '<img class="cleff cleff-bass" src="public/img/cleff_bass.svg" alt="Bass Cleff"></img>';
+        }
+    
+        if (cleff =="treble") {
+            div.innerHTML += '<img class="cleff cleff-treble" src="public/img/cleff_treble.svg" alt="Treble Cleff"></img>';
+        }
 
-    if (cleff =="treble") {
-        div.innerHTML += '<img id="cleff" class="cleff-treble" src="public/img/cleff_treble.svg" alt="Treble Cleff"></img>';
+        signatureDivs[i].prepend(div);
     }
-    signatureDiv.prepend(div);
 }
 
 function cleanUp() {
     var currentAnswers = document.querySelectorAll(".answer-box");
     for (var i = 0; i < currentAnswers.length; i++) {
-        console.log("Removing: " + currentAnswers[i]);
         var element = currentAnswers[i];
         element.parentNode.removeChild(element);
     }
 
     var currentNotes = document.querySelectorAll(".note");
     for (var i = 0; i < currentNotes.length; i++) {
-        console.log("Removing: " + currentNotes[i]);
         var element = currentNotes[i];
         element.parentNode.removeChild(element);
     }
@@ -191,9 +193,11 @@ function moveNote(direction) {
     devNote.classList.toggle(notesBass[devNotePos][0]);
 }
 
-function removeCleff() {
-    if (document.getElementById("cleff")) {
-        var element = document.getElementById("cleff");
+function removeCleffs() {
+    var cleffDivs = document.querySelectorAll(".cleff");
+
+    for (var i = 0; i < cleffDivs.length; i++) {
+        var element = cleffDivs[i];
         element.parentNode.removeChild(element);
     }
 }

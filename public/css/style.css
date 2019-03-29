@@ -17,7 +17,7 @@
 
 .bar {
     flex-wrap: wrap;
-    width: 200px;
+    width: 280px;
 }
 
 body {
@@ -79,16 +79,17 @@ body {
 /* End Button Selectors */
 
 /* Begin Music Cleff Selectors */
-.cleff-bass {
+.cleff {
     position: absolute;
     margin-left: 5px;
+}
+
+.cleff-bass {
     margin-top: 0px;
     height: 50px;
 }
 
 .cleff-treble {
-    position: absolute;
-    margin-left: 5px;
     margin-top: -17px;
     height: 100px;
 }
@@ -242,6 +243,10 @@ body {
     margin-top: 42px;
 }
 
+#signature-two {
+    display: block;
+}
+
 /* Begin Music Staff Selectors */
 .staff {
     justify-content: center;
@@ -273,11 +278,17 @@ body {
     .buttons {
         width: 100%;
     }
+
+    #signature-two {
+        display: none;
+    }
 }
 
 @media only screen and (min-width: 580px) {
     .container {
         width: 90%;
     }
+
+
 }
 /* End Media Queries */
