@@ -239,6 +239,7 @@ body {
 }
 /* End Music Note Selectors */
 
+/* Begin Music Signature Selectors */
 .signature {
     margin-top: 42px;
 }
@@ -246,6 +247,7 @@ body {
 #signature-two {
     display: block;
 }
+/* End Music Signature Selectors */
 
 /* Begin Music Staff Selectors */
 .staff {
